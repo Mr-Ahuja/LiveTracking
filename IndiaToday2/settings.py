@@ -76,12 +76,8 @@ WSGI_APPLICATION = 'IndiaToday2.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd51saibf94jnch',
-        'USER': 'leaswphbfytcvk',
-        'PASSWORD': 'c58e3365861a64308bd3c311057993474e162b5a80dfd1c2afc56d7daf901485',
-        'HOST': 'ec2-35-168-54-239.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
