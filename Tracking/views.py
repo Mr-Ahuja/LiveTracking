@@ -20,12 +20,9 @@ class LogsView(APIView):
         return Response({"data": "Done"})
 
 def activateTrackers(requests, id):
-    t = Logs.objects.get(id=id)
-    
-    if len(t) == 0:
-        Logs.objects.filter(id = id).update(time = datetime.now())
-    else:
-        log_entry = Logs(id = id, time = datetime.now())
-        log_entry.save()
+    Logs.objects.filter(id = id).delete()
+
+    log_entry = Logs(id = id, time = datetime.now())
+    log_entry.save()
         
     return HttpResponse("Done")
