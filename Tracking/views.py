@@ -22,7 +22,7 @@ class LogsView(APIView):
 def activateTrackers(requests, id):
     t = Logs.objects.get(id=id)
     
-    if t != None:
+    if len(t) == 0:
         Logs.objects.filter(id = id).update(time = datetime.now())
     else:
         log_entry = Logs(id = id, time = datetime.now())
