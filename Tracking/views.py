@@ -23,7 +23,7 @@ def activateTrackers(requests, id):
     t = Logs.objects.get(id=id)
     
     if t != None:
-        Logs.objects.filter(id = id).update(time = datetime.now()).save()
+        Logs.objects.filter(id = id).update(time = datetime.now())
     else:
         log_entry = Logs(id = id, time = datetime.now())
         log_entry.save()
